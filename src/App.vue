@@ -1,11 +1,26 @@
-<script setup></script>
+<script>
+  export default{
+    data () {
+      return {
+        name: "Srk",
+        status: 'active',
+        numArray:  ['One', 'Two', 'Three', 'Four', 'Five'],
+      }
+    },
+  };
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <h1>Hello From {{name}}</h1>
+  <p v-if="status == 'active' ">This is True</p>
+  <p v-else="status">Status is False</p>
+
+  <div>
+    <h3>Array Loop</h3>
+    <ol>
+      <li v-for="number in numArray">{{ number }}</li>
+    </ol>
+  </div>
 </template>
 
 <style scoped></style>
