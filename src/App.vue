@@ -1,38 +1,33 @@
-<script>
-import { ref } from 'vue';
+<script setup>
+  import { ref } from 'vue';
+ 
+  const name = ref("Srk");
+  const tasks = ref(['Task One', 'Task Two', 'Task Three', 'Task Four', 'Task Five']);
+  const newTask = ref('');
 
-  export default{
-    setup () {
-      const name = ref("Srk");
-      const status = ref("active");
-      const numArray = ref(['One', 'Two', 'Three', 'Four', 'Five']);
-
-      const toggleSttaus = () => {
-        if(status.value == "active"){
-          status.value = "inactive";
-        }else{
-          status.value = "active";
-        }
-      };
-
-      return {
-        name,
-        status,
-        numArray,
-        toggleSttaus,
-      }
-    },
+  const addTask = () => {
+    if(newTask.value.trim() !== ''){
+      tasks.value.push(newTask.value);
+      newTask.value = '';
+    }
   };
 </script>
 
 <template>
   <h1>Hello From {{name}}</h1>
-  <p>Status is {{status}}</p>
-  <button @click="toggleSttaus" >Toggle Status</button>
+  
   <div>
-    <h3>Array Loop</h3>
+    <div>
+      <form @submit.prevent="addTask">
+        <label for="newTask"> Add Task</label></br>
+        <input type="text" id="newTask" name="newTask" v-model="newTask">
+        <button type="submit">Submit</button>
+      </form>
+      
+    </div>
+    <h3>Tasks</h3>
     <ol>
-      <li v-for="number in numArray">{{ number }}</li>
+      <li v-for="task in tasks">{{ task }}</li>
     </ol>
   </div>
 </template>
