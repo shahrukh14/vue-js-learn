@@ -1,6 +1,6 @@
 # vue-learn
 
-This repo is for learn and practice Vue 3 
+This repo is for learn , practice and developing with Vue 3 using Vite.
 
 ## Recommended IDE Setup
 
