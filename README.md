@@ -2,7 +2,7 @@
 
 This repo is for learn , practice and developing with Vue 3 using Vite.
 
-## Recommended IDE Setup
+## Recommended Setup
 
 [VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
